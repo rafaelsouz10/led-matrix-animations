@@ -1,14 +1,24 @@
 #include <stdio.h>
 #include "pico/stdlib.h"
+#include "include/teclado.h"
 
-
-
-int main()
+void test_keypad()
 {
-    stdio_init_all();
+    setup_keypad();
 
-    while (true) {
-        printf("Hello, world!\n");
-        sleep_ms(1000);
+    while (1)
+    {
+        sleep_ms(50);
+        char key = read_keypad();
+        if (key != '\0')
+        {
+            printf("Tecla pressionada: %c\n", key);
+        }
     }
+}
+
+int main (){
+    test_keypad();
+
+    return 0;
 }
