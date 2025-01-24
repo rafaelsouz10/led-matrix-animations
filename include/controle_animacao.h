@@ -1,10 +1,9 @@
 #ifndef ANIMACAO_H
 #define ANIMACAO_H
 
-#include <stdio.h> 
- 
 
- 
+#include "include/matriz_led.h"
+
 // Função para desligar todos os LEDs
 void desligar_leds() {
     printf("Desligando todos os LEDs.\n");
