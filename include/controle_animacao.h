@@ -4,6 +4,9 @@
 
 #include "include/matriz_led.h"
 #include "include/animacoes/animacaoT1.h"
+#include "include/animacoes/animcaoT2.h"
+
+
 // Função para desligar todos os LEDs
 void desligar_leds() {
     printf("Desligando todos os LEDs.\n");
@@ -43,7 +46,7 @@ void efect_1() {
 // Função para efeito 2
 void efect_2() {
     printf("Executando efeito 2 nos LEDs.\n");
-    // Implementação do efeito 2
+    wave_animation(200);
 }
 
 // Função para efeito 3
