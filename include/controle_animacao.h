@@ -5,6 +5,8 @@
 #include "include/matriz_led.h"
 #include "include/animacoes/animacaoT1.h"
 #include "include/animacoes/animcaoT2.h"
+#include "include/animacoes/animacao_basicas.h"
+
 #include "include/animacoes/animacao_coracao.h"
 #include "include/animacoes/animacao_b.h"
 
@@ -12,30 +14,35 @@
 // Função para desligar todos os LEDs
 void desligar_leds() {
     printf("Desligando todos os LEDs.\n");
+    off_animation();
     // Implementação para desligar os LEDs
 }
 
 // Função para ligar LEDs na cor azul
 void ligar_leds_azul() {
     printf("Ligando LEDs na cor azul (100%% intensidade).\n");
+    blue_animation();
     // Implementação para LEDs azuis
 }
 
 // Função para ligar LEDs na cor vermelha
 void ligar_leds_vermelho() {
     printf("Ligando LEDs na cor vermelha (80%% intensidade).\n");
+    red_animation();
     // Implementação para LEDs vermelhos
 }
 
 // Função para ligar LEDs na cor verde
 void ligar_leds_verde() {
     printf("Ligando LEDs na cor verde (50%% intensidade).\n");
+    green_animation();
     // Implementação para LEDs verdes
 }
 
 // Função para ligar LEDs na cor branca
 void ligar_leds_branco() {
     printf("Ligando LEDs na cor branca (20%% intensidade).\n");
+    white_animation();
     // Implementação para LEDs brancos
 }
 
