@@ -6,15 +6,24 @@
 int main()
 {
 
+    // Para realizar testes digitando as teclas via UART (caso não tenha o teclado matricial), 
+    // comente a linha char key = read_keypad(); e descomente as linhas printf ("\nDigite uma tecla: "); e scanf("%c", &key);
+
     stdio_init_all(); // Inicializa entradas e saídas.
     npInit(LED_PIN);  // Inicializa matriz de LEDs NeoPixel.
     setup_keypad();
+
+    char key;
 
     while (true)
     {
         sleep_ms(50);
 
         char key = read_keypad();
+
+        //printf("\nDigite uma tecla: ");
+        //scanf("%c", &key);
+
         if (key != '\0')
         {
             printf("Tecla pressionada: %c\n", key);
