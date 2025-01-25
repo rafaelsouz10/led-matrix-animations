@@ -9,7 +9,8 @@
 
 #include "include/animacoes/animacao_coracao.h"
 #include "include/animacoes/animacao_b.h"
-
+#include "include/animacoes/animacao_letra.h"
+#include "include/animacoes/animacao_linha.h"
 
 // Função para desligar todos os LEDs
 void desligar_leds() {
