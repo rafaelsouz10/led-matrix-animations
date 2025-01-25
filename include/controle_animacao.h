@@ -9,7 +9,8 @@
 
 #include "include/animacoes/animacao_coracao.h"
 #include "include/animacoes/animacao_b.h"
-
+#include "include/animacoes/animacao_letra.h"
+#include "include/animacoes/animacao_linha.h"
 
 // Função para desligar todos os LEDs
 void desligar_leds() {
@@ -73,13 +74,13 @@ void efect_4() {
 // Função para efeito 5
 void efect_5() {
     printf("Executando efeito 5 nos LEDs.\n");
-    // Implementação do efeito 5
+    letter_animation(700);
 }
 
 // Função para efeito 6
 void efect_6() {
     printf("Executando efeito 6 nos LEDs.\n");
-    // Implementação do efeito 6
+    line_animation(700);
 }
 
 // Função para efeito 7
