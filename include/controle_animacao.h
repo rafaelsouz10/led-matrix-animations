@@ -11,6 +11,8 @@
 #include "include/animacoes/animacao_b.h"
 #include "include/animacoes/animacao_letra.h"
 #include "include/animacoes/animacao_linha.h"
+#include "include/animacoes/animacao_circulo.h"
+#include "include/animacoes/animacao_estrela.h"
 
 // Função para desligar todos os LEDs
 void desligar_leds() {
@@ -86,13 +88,13 @@ void efect_6() {
 // Função para efeito 7
 void efect_7() {
     printf("Executando efeito 7 nos LEDs.\n");
-    // Implementação do efeito 7
+    circle_animation(500);
 }
 
 // Função para efeito 8
 void efect_8() {
     printf("Executando efeito 8 nos LEDs.\n");
-    // Implementação do efeito 8
+    star_animation(500);
 }
 
 // Função para efeito 9
