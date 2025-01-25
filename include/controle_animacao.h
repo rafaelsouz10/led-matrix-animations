@@ -13,6 +13,8 @@
 #include "include/animacoes/animacao_linha.h"
 #include "include/animacoes/animacao_circulo.h"
 #include "include/animacoes/animacao_estrela.h"
+#include "include/animacoes/animacaoT9.h"
+#include "include/animacoes/animacaoT0.h"
 
 // Função para desligar todos os LEDs
 void desligar_leds() {
@@ -52,13 +54,13 @@ void ligar_leds_branco() {
 // Função para efeito 1
 void efect_1() {
     printf("Executando efeito 1 nos LEDs.\n");
-    clock_animation(500);
+    clock_animation(450);
 }
 
 // Função para efeito 2
 void efect_2() {
     printf("Executando efeito 2 nos LEDs.\n");
-    wave_animation(200);
+    wave_animation(500);
 }
 
 // Função para efeito 3
@@ -88,25 +90,25 @@ void efect_6() {
 // Função para efeito 7
 void efect_7() {
     printf("Executando efeito 7 nos LEDs.\n");
-    circle_animation(500);
+    circle_animation(700);
 }
 
 // Função para efeito 8
 void efect_8() {
     printf("Executando efeito 8 nos LEDs.\n");
-    star_animation(500);
+    star_animation(700);
 }
 
 // Função para efeito 9
 void efect_9() {
     printf("Executando efeito 9 nos LEDs.\n");
-    // Implementação do efeito 9
+    XYZ_animation(700);
 }
 
 // Função para efeito 0
 void efect_0() {
     printf("Executando efeito 0 nos LEDs.\n");
-    // Implementação do efeito 0
+    ten_animation(800);
 }
 
 // Função genérica para um efeito especial
