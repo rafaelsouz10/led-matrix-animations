@@ -117,4 +117,11 @@ void efect() {
     // Implementação do efeito especial
 }
 
+// Função geral para executar uma animação com sinal sonoro
+void executar_animacao_com_som(void (*animacao)(), int duracao_som) {
+    printf("Executando animação com sinal sonoro.\n");
+    animacao(); // Executa a animação a partir do ponteiro da função
+    buzzer_procedural_sound(animacao, duracao_som); // Gera som procedural baseado na animação
+}
+
 #endif
