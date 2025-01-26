@@ -140,20 +140,41 @@ typedef struct {
 } AnimacaoArgs;
 
 void sound(void (*animation)(int), int duration) {
-    buzzer_procedural_sound((void (*)())animation, duration);
+    buzzer_procedural_sound(animation, duration);
+}
+
+void core1_entry() {
+    while (true) {
+        // Espera por dados na FIFO
+        uint32_t data = multicore_fifo_pop_blocking();
+        if (data == 0) break; // Sinal para terminar
+
+        // Executa a função de som
+        AnimacaoArgs* args = (AnimacaoArgs*)data;
+        sound(args->animation, args->duration);
+
+        // Adiciona um pequeno atraso para evitar sobrecarga
+        sleep_ms(10);
+    }
 }
 
 // Função geral para executar uma animação com sinal sonoro
 void executar_animacao_com_som(void (*animation)(int), int duration) {
     printf("Executando animação com sinal sonoro.\n");
 
-    // Envia a função de som para o segundo núcleo
-    multicore_launch_core1((void (*)(void))sound);
+    // Inicializa o segundo núcleo
+    multicore_launch_core1(core1_entry);
+
+    // Prepara os argumentos para a função de som
+    AnimacaoArgs args = {animation, duration};
+
+    // Envia os argumentos para o segundo núcleo
+    multicore_fifo_push_blocking((uint32_t)&args);
 
     // Executa a animação no núcleo principal
     animation(duration);
 
-    // Espera o segundo núcleo terminar
+    // Sinaliza o segundo núcleo para terminar
     multicore_fifo_push_blocking(0);
 }
 #endif
