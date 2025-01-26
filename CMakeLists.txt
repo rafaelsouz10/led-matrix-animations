@@ -63,7 +63,9 @@ pico_enable_stdio_usb(led-matrix-animations 1)
 
 # Add the standard library to the build
 target_link_libraries(led-matrix-animations
-        pico_stdlib)
+        pico_stdlib
+        pico_multicore
+        )
 
 # Add the standard include files to the build
 target_include_directories(led-matrix-animations PRIVATE
@@ -71,7 +73,7 @@ target_include_directories(led-matrix-animations PRIVATE
 )
 
 # Add any user requested libraries
-target_link_libraries(led-matrix-animations 
+target_link_libraries(led-matrix-animations
         hardware_pio
         hardware_clocks
         )
