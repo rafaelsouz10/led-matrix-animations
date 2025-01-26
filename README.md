@@ -154,20 +154,18 @@ Os testes realizados garantiram que todas as funcionalidades do sistema operam c
 ## Divisão de Tarefas do Grupo 9 - Subgrupo 9 do EmbarcaTech - CEPEDI 
 
 - **Líder do Projeto**:
-  - GABRIEL SOUZA SANTOS
-- **Desenvolvimento do Teclado Matricial**:
-  - WILSON OLIVEIRA LIMA
+  - RAFAEL SOUZA BARBOSA 
+- **Desenvolvimento das Animações**:
   - DANIEL SOARES OLIVEIRA SANTOS
-- **Controle dos LEDs RGB**:
+  - GABRIEL SOUZA SANTOS
   - ANDRÉ LUIZ FALCÃO SOARES
-  - RAFAEL SOUZA BARBOSA
-- **Controle do Buzzer**:
   - WALLAS FRANÇA SAMPAIO
-  - JOSÉ WILSON PASSOS DOS SANTOS JÚNIOR
-  - LAÍSE CAFÉ DOS SANTOS
+- **Programador de Funcionalidades Básicas**:
+  - Junior Santos
+- **Programador de Funcionalidades Avançadas**:
+  - WILSON OLIVEIRA LIMA
 - **Documentação e Apresentação**:
-  - ANA CARLA MACÁRIO SANTANA (Documentação)
-  - WESLEY NASCIMENTO DOS SANTOS (Apresentação)
+  - ANA CARLA MACÁRIO SANTANA 
 ## Vídeo Demonstrativo
 
 *(A ser adicionado posteriormente)*
