@@ -161,7 +161,7 @@ Os testes realizados garantiram que todas as funcionalidades do sistema operam c
   - ANDRÉ LUIZ FALCÃO SOARES
   - WALLAS FRANÇA SAMPAIO
 - **Programador de Funcionalidades Básicas**:
-  - Junior Santos
+  - JOSÉ WILSON PASSOS DOS SANTOS JÚNIOR
 - **Programador de Funcionalidades Avançadas**:
   - WILSON OLIVEIRA LIMA
 - **Documentação e Apresentação**:
