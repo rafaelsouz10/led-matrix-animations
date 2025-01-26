@@ -135,23 +135,23 @@ void effect_reboot(int duration) {
 
 // Estrutura para passar múltiplos argumentos para a thread
 typedef struct {
-    void (*animacao)(int);
-    int duracao;
+    void (*animation)(int);
+    int duration;
 } AnimacaoArgs;
 
-void som(void (*animacao)(int), int duration) {
-    buzzer_procedural_sound((void (*)())animacao, duration);
+void sound(void (*animation)(int), int duration) {
+    buzzer_procedural_sound((void (*)())animation, duration);
 }
 
 // Função geral para executar uma animação com sinal sonoro
-void executar_animacao_com_som(void (*animacao)(int), int duration) {
+void executar_animacao_com_som(void (*animation)(int), int duration) {
     printf("Executando animação com sinal sonoro.\n");
 
     // Envia a função de som para o segundo núcleo
-    multicore_launch_core1((void (*)(void))som);
+    multicore_launch_core1((void (*)(void))sound);
 
     // Executa a animação no núcleo principal
-    animacao(duration);
+    animation(duration);
 
     // Espera o segundo núcleo terminar
     multicore_fifo_push_blocking(0);

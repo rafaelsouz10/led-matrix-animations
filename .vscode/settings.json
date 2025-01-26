@@ -43,6 +43,7 @@
     "controle_animacao.h": "c",
     "teclado.h": "c",
     "buzzer.h": "c",
-    "matriz_led.h": "c"
+    "matriz_led.h": "c",
+    "reboot.h": "c"
   }
 }
