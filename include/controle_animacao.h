@@ -132,10 +132,12 @@ void effect_reboot(int duration) {
 }
 
 // Função geral para executar uma animação com sinal sonoro
-void executar_animacao_com_som(void (*animacao)(int), int duracao_som) {
+void executar_animacao_com_som(void (*animation)(int), int duration) {
     printf("Executando animação com sinal sonoro.\n");
-    animacao(duracao_som); // Executa a animação com a duração passada
-    buzzer_procedural_sound((void (*)())animacao, duracao_som); // Gera som procedural baseado na animação
+
+    buzzer_procedural_sound((void (*)())animation, duration);
+    animation(duration); // Executa a animação com a duração passada
+    buzzer_procedural_sound((void (*)())animation, duration);
 }
 
 #endif
