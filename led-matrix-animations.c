@@ -6,7 +6,6 @@
 
 int main()
 {
-
     // Para realizar testes digitando as teclas via UART (caso não tenha o teclado matricial),
     // comente a linha char key = read_keypad(); e descomente as linhas printf ("\nDigite uma tecla: "); e scanf("%c", &key);
 
@@ -78,7 +77,7 @@ int main()
                 executar_animacao_com_som(effect_0, 800);
                 break;
             case '*':
-                effect_star();
+                executar_animacao_com_som(effect_reboot, 200);
                 break;
             default:
                 printf("Tecla sem função atribuída: %c\n", key);

@@ -41,6 +41,8 @@
     ".fantomasignore": "ignore",
     "animacao_estrela": "cpp",
     "controle_animacao.h": "c",
-    "teclado.h": "c"
+    "teclado.h": "c",
+    "buzzer.h": "c",
+    "matriz_led.h": "c"
   }
 }

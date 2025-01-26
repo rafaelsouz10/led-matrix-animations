@@ -2,6 +2,7 @@
 #define ANIMACAO_H
 
 
+#include "include/reboot.h"
 #include "include/buzzer.h"
 #include "include/matriz_led.h"
 #include "include/animacoes/animacaoT1.h"
@@ -113,9 +114,21 @@ void effect_0(int duration) {
 }
 
 // Função genérica para um efeito especial
-void effect_star() {
+void effect_reboot(int duration) {
     printf("Executando efeito especial.\n");
-    // Implementação do efeito especial
+
+    effect_1(duration);
+    effect_2(duration);
+    effect_3(duration);
+    effect_4(duration);
+    effect_5(duration);
+    effect_6(duration);
+    effect_7(duration);
+    effect_8(duration);
+    effect_9(duration);
+    effect_0(duration);
+
+    reboot_to_bootloader();
 }
 
 // Função geral para executar uma animação com sinal sonoro
