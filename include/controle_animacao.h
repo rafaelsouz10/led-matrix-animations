@@ -2,6 +2,8 @@
 #define ANIMACAO_H
 
 
+#include "include/reboot.h"
+#include "include/buzzer.h"
 #include "include/matriz_led.h"
 #include "include/animacoes/animacaoT1.h"
 #include "include/animacoes/animcaoT2.h"
@@ -52,69 +54,90 @@ void ligar_leds_branco() {
 }
 
 // Função para efeito 1
-void efect_1() {
+void effect_1(int duration) {
     printf("Executando efeito 1 nos LEDs.\n");
-    clock_animation(450);
+    clock_animation(duration);
 }
 
 // Função para efeito 2
-void efect_2() {
+void effect_2(int duration) {
     printf("Executando efeito 2 nos LEDs.\n");
-    wave_animation(500);
+    wave_animation(duration);
 }
 
 // Função para efeito 3
-void efect_3() {
+void effect_3(int duration) {
     printf("Executando efeito 3 nos LEDs.\n");
-    heart_animation(500);
+    heart_animation(duration);
 }
 
 // Função para efeito 4
-void efect_4() {
+void effect_4(int duration) {
     printf("Executando efeito 4 nos LEDs.\n");
-    beer_animation(1000);
+    beer_animation(duration);
 }
 
 // Função para efeito 5
-void efect_5() {
+void effect_5(int duration) {
     printf("Executando efeito 5 nos LEDs.\n");
-    letter_animation(700);
+    letter_animation(duration);
 }
 
 // Função para efeito 6
-void efect_6() {
+void effect_6(int duration) {
     printf("Executando efeito 6 nos LEDs.\n");
-    line_animation(700);
+    line_animation(duration);
 }
 
 // Função para efeito 7
-void efect_7() {
+void effect_7(int duration) {
     printf("Executando efeito 7 nos LEDs.\n");
-    circle_animation(700);
+    circle_animation(duration);
 }
 
 // Função para efeito 8
-void efect_8() {
+void effect_8(int duration) {
     printf("Executando efeito 8 nos LEDs.\n");
-    star_animation(700);
+    star_animation(duration);
 }
 
 // Função para efeito 9
-void efect_9() {
+void effect_9(int duration) {
     printf("Executando efeito 9 nos LEDs.\n");
-    XYZ_animation(700);
+    XYZ_animation(duration);
 }
 
 // Função para efeito 0
-void efect_0() {
+void effect_0(int duration) {
     printf("Executando efeito 0 nos LEDs.\n");
-    ten_animation(800);
+    ten_animation(duration);
 }
 
 // Função genérica para um efeito especial
-void efect() {
+void effect_reboot(int duration) {
     printf("Executando efeito especial.\n");
-    // Implementação do efeito especial
+
+    effect_1(duration);
+    effect_2(duration);
+    effect_3(duration);
+    effect_4(duration);
+    effect_5(duration);
+    effect_6(duration);
+    effect_7(duration);
+    effect_8(duration);
+    effect_9(duration);
+    effect_0(duration);
+
+    reboot_to_bootloader();
+}
+
+// Função geral para executar uma animação com sinal sonoro
+void executar_animacao_com_som(void (*animation)(int), int duration) {
+    printf("Executando animação com sinal sonoro.\n");
+
+    buzzer_procedural_sound((void (*)())animation, duration);
+    animation(duration); // Executa a animação com a duração passada
+    buzzer_procedural_sound((void (*)())animation, duration);
 }
 
 #endif
