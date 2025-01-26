@@ -10,9 +10,9 @@ int main()
     // comente a linha char key = read_keypad(); e descomente as linhas printf ("\nDigite uma tecla: "); e scanf("%c", &key);
 
     stdio_init_all(); // Inicializa entradas e saídas.
-    npInit(LED_PIN);  // Inicializa matriz de LEDs NeoPixel.
-    buzzer_init();    // Inicializa buzzers.
-    setup_keypad();
+    npInit(LED_PIN); // Inicializa matriz de LEDs NeoPixel.
+    buzzer_init(); // Inicializa buzzers.
+    setup_keypad(); // Inicializa o teclado matricial.
 
     char key;
 
@@ -47,7 +47,7 @@ int main()
                 ligar_leds_branco();
                 break;
             case '1':
-                executar_animacao_com_som(effect_1, 450);
+                executar_animacao_com_som(effect_1, 400);
                 break;
             case '2':
                 executar_animacao_com_som(effect_2, 500);
