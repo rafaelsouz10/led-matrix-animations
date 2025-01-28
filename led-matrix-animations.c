@@ -20,7 +20,7 @@ int main()
     {
         sleep_ms(50);
 
-        char key = read_keypad();
+        key = read_keypad();
 
         //printf("\nDigite uma tecla: ");
         //scanf("%c", &key);
