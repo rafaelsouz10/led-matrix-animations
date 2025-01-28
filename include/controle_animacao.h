@@ -127,6 +127,7 @@ void effect_reboot(int duration) {
     effect_8(duration);
     effect_9(duration);
     effect_0(duration);
+    desligar_leds();
 
     reboot_to_bootloader();
 }
