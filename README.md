@@ -130,6 +130,27 @@ Após a configuração, todos os componentes estarão prontos para o uso no sist
 3. **Tecla de Reboot**
    - **\* (`effect()`):** Habilita o modo de gravação (reboot do sistema via software).
 
+## Teste em Serial Monitor
+
+**Observação:** O botão "*" do teclado matricial só ativará o modo Bootsel quando o programa for testado diretamente na placa. No entanto, é possível realizar o teste usando o monitor serial. Para isso, siga os passos abaixo:
+
+- Comente a linha 23, onde está o código:
+```c
+char key = read_keypad();
+```
+
+- Descomente as linhas 25 e 26, que contêm:
+
+```c
+printf("\nDigite uma tecla: ");
+scanf("%c", &key);
+```
+
+- Envie o programa para a placa e abra o monitor serial.
+- Certifique-se de selecionar a placa correta no monitor serial.
+- Digite os comandos correspondentes às teclas do teclado matricial diretamente no monitor serial. O programa executará os comandos associados a essas teclas conforme programado.
+
+Dessa forma, você pode testar o comportamento do programa mesmo sem usar fisicamente o teclado matricial.
 ---
 
 ## Testes
