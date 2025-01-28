@@ -103,17 +103,23 @@ Após a configuração, todos os componentes estarão prontos para o uso no sist
 
 1. **Teclado Matricial 4x4**: Detecta teclas pressionadas e executa ações correspondentes.
 2. **LEDs RGB**: Alteram as cores com base nas teclas pressionadas.
-3. **Buzzer**: Emite sons como feedback ao pressionar teclas específicas.
+3. **Buzzer**: Emite sons como feedback ao pressionar teclas.
 
 ### Animações e Funções Associadas
 
 1. **Teclas 0-9: Animações Personalizadas**
    - Cada tecla do teclado matricial de 0 a 9 aciona uma animação única na matriz de LEDs RGB 5x5. Essas animações são fluídas e compostas por pelo menos 5 frames (quadros) diferentes.
    - Exemplos:
+     - **Tecla 0 (`effect_0()`):** Executa a animação 0.
      - **Tecla 1 (`effect_1()`):** Executa a animação 1.
      - **Tecla 2 (`effect_2()`):** Executa a animação 2.
-     - *(Descrever as animações conforme necessário para as teclas restantes)*.
-
+     - **Tecla 3 (`effect_3()`):** Executa a animação 3.
+     - **Tecla 4 (`effect_4()`):** Executa a animação 4.
+     - **Tecla 5 (`effect_5()`):** Executa a animação 5.
+     - **Tecla 6 (`effect_6()`):** Executa a animação 6.
+     - **Tecla 7 (`effect_7()`):** Executa a animação 7.
+     - **Tecla 8 (`effect_8()`):** Executa a animação 8.
+     - **Tecla 9 (`effect_9()`):** Executa a animação 9.
 2. **Teclas de Controle de Cores**
    - **A (`desligar_leds()`):** Desliga todos os LEDs da matriz.
    - **B (`ligar_leds_azul()`):** Liga todos os LEDs na cor azul com intensidade máxima.
@@ -123,9 +129,6 @@ Após a configuração, todos os componentes estarão prontos para o uso no sist
 
 3. **Tecla de Reboot**
    - **\* (`effect()`):** Habilita o modo de gravação (reboot do sistema via software).
-
-4. **Outras Teclas**
-   - Teclas não mapeadas imprimem no console a mensagem: "Tecla sem função atribuída".
 
 ---
 
@@ -143,10 +146,13 @@ Os testes realizados garantiram que todas as funcionalidades do sistema operam c
 2. **Teste das Animações**:
    - Cada tecla de 0 a 9 foi testada individualmente, verificando a execução de animações fluídas e com pelo menos 5 frames. Todas as animações foram exibidas corretamente na matriz de LEDs.
 
-3. **Teste do Reboot**:
+3. **Teste do Buzzer**:
+   - O buzzer é ativado durante as animações ( o som é emitido durante cada animação acionada pelas teclas 0-9).
+
+4. **Teste do Reboot**:
    - Ao pressionar a tecla \*, o sistema entrou corretamente no modo de gravação (reboot).
 
-4. **Teste Geral**:
+5. **Teste Geral**:
    - O sistema foi testado no simulador Wokwi e no hardware real. Em ambas as plataformas, todas as funcionalidades operaram sem falhas.
 
 ---
@@ -164,7 +170,7 @@ Os testes realizados garantiram que todas as funcionalidades do sistema operam c
   - JOSÉ WILSON PASSOS DOS SANTOS JÚNIOR
 - **Programador de Funcionalidades Avançadas**:
   - WILSON OLIVEIRA LIMA
-- **Documentação e Apresentação**:
+- **Documentação**:
   - ANA CARLA MACÁRIO SANTANA 
 
 ## Vídeo Demonstrativo
