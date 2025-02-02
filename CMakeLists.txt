@@ -42,39 +42,38 @@ set(PICO_BOARD pico CACHE STRING "Board type")
 # Pull in Raspberry Pi Pico SDK (must be before project)
 include(pico_sdk_import.cmake)
 
-project(led-matrix-animations C CXX ASM)
+project(Led-Matrix-Interruptions C CXX ASM)
 
 # Initialise the Raspberry Pi Pico SDK
 pico_sdk_init()
 
 # Add executable. Default name is the project name, version 0.1
 
-add_executable(led-matrix-animations led-matrix-animations.c )
+add_executable(Led-Matrix-Interruptions Led-Matrix-Interruptions.c )
 
-pico_set_program_name(led-matrix-animations "led-matrix-animations")
-pico_set_program_version(led-matrix-animations "0.1")
+pico_set_program_name(Led-Matrix-Interruptions "Led-Matrix-Interruptions")
+pico_set_program_version(Led-Matrix-Interruptions "0.1")
 
 # Generate PIO header
-pico_generate_pio_header(led-matrix-animations ${CMAKE_CURRENT_LIST_DIR}/ws2818b.pio)
+pico_generate_pio_header(Led-Matrix-Interruptions ${CMAKE_CURRENT_LIST_DIR}/ws2812.pio)
 
 # Modify the below lines to enable/disable output over UART/USB
-pico_enable_stdio_uart(led-matrix-animations 0)
-pico_enable_stdio_usb(led-matrix-animations 1)
+pico_enable_stdio_uart(Led-Matrix-Interruptions 0)
+pico_enable_stdio_usb(Led-Matrix-Interruptions 1)
 
 # Add the standard library to the build
-target_link_libraries(led-matrix-animations
+target_link_libraries(Led-Matrix-Interruptions
         pico_stdlib)
 
 # Add the standard include files to the build
-target_include_directories(led-matrix-animations PRIVATE
+target_include_directories(Led-Matrix-Interruptions PRIVATE
   ${CMAKE_CURRENT_LIST_DIR}
 )
 
 # Add any user requested libraries
-target_link_libraries(led-matrix-animations 
+target_link_libraries(Led-Matrix-Interruptions 
         hardware_pio
         hardware_clocks
         )
 
-pico_add_extra_outputs(led-matrix-animations)
-
+pico_add_extra_outputs(Led-Matrix-Interruptions)
